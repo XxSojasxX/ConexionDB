@@ -30,7 +30,7 @@ export class Album {
         nullable: false,
         comment: 'nombre album'
     })
-    album: string
+    nombre: string
 
     @Column('date', {
         name: 'lanzamiento',

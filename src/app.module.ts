@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AlbumModule } from './album/album.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Album } from './album/entities/album.entity';
 
 @Module({
   imports: [
@@ -13,12 +14,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       host:'localhost',
       port: 5432,
       username:'postgres',
-      password: 'root',
-      database:'disquera',
+      password: 'Santi018',
+      database:'nestjs',
       autoLoadEntities: true,
       synchronize: true,
       dropSchema: true,
-
+      entities: [Album],
     }),
   ],
   controllers: [AppController],

@@ -1,27 +1,27 @@
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-@Entity('albums',{schema:'musica'})
+@Entity('albums', { schema: 'public' })
 export class Album {
     @PrimaryGeneratedColumn('uuid')
     id: string;
     @CreateDateColumn({
         name: 'create_at',
         type: 'timestamp',
-        default:()=>'CURRENT_TIMESTAMP'
+        default: () => 'CURRENT_TIMESTAMP'
     })
     create_at: Date;
 
     @UpdateDateColumn({
         name: 'update_at',
-        type:'timestamp',
-        default:()=>'CURRENT_TIMESTAMP'
+        type: 'timestamp',
+        default: () => 'CURRENT_TIMESTAMP'
     })
     update_at: Date;
 
     @DeleteDateColumn({
-        name:'delete_at',
-        type:'timestamp',
-        nullable:true,
+        name: 'delete_at',
+        type: 'timestamp',
+        nullable: true,
     })
     deleteAt: Date;
 

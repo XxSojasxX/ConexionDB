@@ -4,5 +4,9 @@
   "sourceRoot": "src",
   "compilerOptions": {
     "deleteOutDir": true
+  },
+  "migrations": {
+    "directory": "./migrations",
+    "schema": "./migration.schema.ts"
   }
 }

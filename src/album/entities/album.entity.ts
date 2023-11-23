@@ -2,7 +2,7 @@ import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedCol
 
 @Entity('albums', { schema: 'public' })
 export class Album {
-    @PrimaryGeneratedColumn('uuid')
+    @PrimaryGeneratedColumn( 'increment')
     id: string;
     @CreateDateColumn({
         name: 'create_at',
@@ -32,12 +32,12 @@ export class Album {
     })
     nombre: string
 
-    @Column('date', {
+    @Column('varchar', {
         name: 'lanzamiento',
         nullable: false,
         comment: 'fecha de lanzamiento'
     })
-    lanzamiento: Date
+    lanzamiento: string
 
     @Column('numeric', {
         name: 'pistas',

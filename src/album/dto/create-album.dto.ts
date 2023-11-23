@@ -1,17 +1,18 @@
-import { IsDateString, IsNotEmpty, IsNumberString, IsOptional, IsString, MinLength } from "class-validator";
+import { Type } from "class-transformer";
+import { IsDateString, IsNotEmpty, IsNumber, IsNumberString, IsOptional, IsPositive, IsString, MinLength } from "class-validator";
 
 export class CreateAlbumDto {
+    
     @IsString()
     @IsNotEmpty()
     nombre: string;
 
-    @IsDateString()
-    @IsNotEmpty()
-    lanzamiento: Date;
+    @IsString()
+    @IsOptional()
+    lanzamiento: string;
 
-    @IsNumberString()
-    @IsNotEmpty()
-    @MinLength(1)
+    @IsNumber()
+    @IsPositive()
     pistas: number;
 
     @IsString()
@@ -20,6 +21,5 @@ export class CreateAlbumDto {
 
     @IsString()
     @IsNotEmpty()
-    @IsOptional()
     disquera: string
 }
